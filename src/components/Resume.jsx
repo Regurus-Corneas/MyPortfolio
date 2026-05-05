@@ -38,7 +38,7 @@ function Resume() {
         }}
       />
 
-      <div className="relative z-10 flex-1 flex flex-col items-center justify-center pt-[10vh] pb-8">
+      <div className="relative z-10 flex-1 flex flex-col items-center justify-center pt-[18vh] pb-8">
         <div className="max-w-6xl mx-auto w-full px-6 md:px-12">
 
           <div className="grid grid-cols-3 gap-4">
@@ -103,7 +103,7 @@ function Resume() {
           </div>
 
           {/* Download CV Button */}
-          <div className="flex justify-center mt-6">
+          <div className="flex justify-center mt-1">
             <div className="glass-glow-btn-cv">
               <a href="#" download>
                 <Download size={16} className="mr-2" />
