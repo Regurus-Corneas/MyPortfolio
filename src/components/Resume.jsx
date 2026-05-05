@@ -105,7 +105,7 @@ function Resume() {
           {/* Download CV Button */}
           <div className="flex justify-center mt-1">
             <div className="glass-glow-btn-cv">
-              <a href="/cv.pdf" download>
+              <a href="/cv.pdf" download="cv.pdf" target="_blank" rel="noopener noreferrer">
                 <Download size={16} className="mr-2" />
                 Download CV
               </a>
