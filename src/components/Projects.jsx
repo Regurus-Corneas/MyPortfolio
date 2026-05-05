@@ -18,7 +18,7 @@ function Projects() {
       title: 'LUCID CV',
       description: 'AI-powered resume matcher and optimizer tailored for specific job descriptions.',
       tech: ['Next.js', 'Clerk Authentication', 'Groq AI API'],
-      link: 'https://my-portfolio-six-mauve-20.vercel.app',
+      link: 'https://lucid-cv.vercel.app',
       image: '/images/lucid-cv-preview.png'
     }
   ]
