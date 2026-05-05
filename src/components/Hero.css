@@ -1,0 +1,109 @@
+.glass-glow-btn {
+  height: 50px;
+  position: relative;
+  width: 155px;
+}
+
+.glass-glow-btn a {
+  align-items: center;
+  background: rgba(255, 255, 255, 0.05);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 30px;
+  box-shadow: 0 15px 35px rgba(255, 255, 255, 0.2);
+  color: #fff;
+  display: flex;
+  font-size: 18px;
+  font-weight: 700;
+  left: 0;
+  top: 0;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  justify-content: center;
+  letter-spacing: 1px;
+  text-decoration: none;
+  overflow: hidden;
+  -webkit-backdrop-filter: blur(15px);  
+  backdrop-filter: blur(15px);
+  z-index: 1;
+  transition: 0.5s;
+}
+
+.glass-glow-btn:hover a {
+  letter-spacing: 2px;
+}
+
+.glass-glow-btn a::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(to left,
+              rgba(255,255,255,0.15),
+              transparent);
+  transform: skewX(45deg) translateX(0);
+  transition: 0.5s;
+}
+
+.glass-glow-btn:hover a::before {
+  transform: skewX(45deg) translateX(200%);
+}
+
+.glass-glow-btn::before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: -5px;
+  height: 10px;
+  width: 30px; 
+  background: #ff1f71;
+  border-radius: 10px;
+  transition: 0.5s;
+  transition-delay: 0s;
+  box-shadow: 0 0 5px #ff1f71,
+    0 0 15px #ff1f71,
+    0 0 30px #ff1f71,
+    0 0 60px #ff1f71;
+}
+
+.glass-glow-btn:hover::before {
+  bottom: 0;
+  height: 50%;
+  width: 80%;
+  border-radius: 30px;
+  transition-delay: 0.5s;
+}
+
+.glass-glow-btn::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: -5px;
+  height: 10px;
+  width: 30px;
+  background: #ff1f71;
+  border-radius: 10px;
+  transition: 0.5s;
+  transition-delay: 0s;
+  box-shadow: 0 0 5px #ff1f71,
+    0 0 15px #ff1f71,
+    0 0 30px #ff1f71,
+    0 0 60px #ff1f71;
+}
+
+.glass-glow-btn:hover::after {
+  top: 0;
+  height: 50%;
+  width: 80%;
+  border-radius: 30px;
+  transition-delay: 0.5s;
+}
+
+.glass-glow-btn:active a {
+  color: #000;
+}

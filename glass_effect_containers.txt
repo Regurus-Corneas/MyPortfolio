@@ -1,0 +1,442 @@
+-----HTML-----
+
+<body>
+  <div class="container">
+    <div class="card">
+      <div class="card-content">
+        <div class="card-image">
+          <img src="https://png.pngtree.com/thumb_back/fh260/background/20240913/pngtree-new-free-photo-nature-design-with-bokeh-effect-image_16175567.jpg" alt="Card image">
+        </div>
+        <h2 class="card-title">Glassmorphism Design</h2>
+        <p class="card-text">Experience the modern UI trend with this beautiful frosted glass effect card. Hover to see interactive animations.</p>
+        <div class="card-stats">
+          <div class="stat">
+            <div class="value">89%</div>
+            <div class="type">Design</div>
+          </div>
+          <div class="stat">
+            <div class="value">95%</div>
+            <div class="type">Style</div>
+          </div>
+          <div class="stat">
+            <div class="value">92%</div>
+            <div class="type">Appeal</div>
+          </div>
+        </div>
+        <button class="card-button">Learn More</button>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-content">
+        <div class="card-image">
+          <img src="https://static.vecteezy.com/system/resources/previews/036/801/375/large_2x/ai-generated-bokeh-effect-christmas-tree-background-blurred-and-shining-christmas-rings-and-lights-free-photo.jpg" alt="Card image">
+        </div>
+        <h2 class="card-title">Modern Aesthetics</h2>
+        <p class="card-text">Clean, minimal design with a touch of blur and transparency creates depth and visual hierarchy.</p>
+        <div class="card-stats">
+          <div class="stat">
+            <div class="value">96%</div>
+            <div class="type">Modern</div>
+          </div>
+          <div class="stat">
+            <div class="value">88%</div>
+            <div class="type">Clean</div>
+          </div>
+          <div class="stat">
+            <div class="value">94%</div>
+            <div class="type">Minimal</div>
+          </div>
+        </div>
+        <button class="card-button">Explore</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="background">
+    <div class="shape shape1"></div>
+    <div class="shape shape2"></div>
+    <div class="shape shape3"></div>
+  </div>
+</body>
+
+
+-----CSS-----
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #161623;
+  overflow-x: hidden;
+  position: relative;
+}
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 40px;
+  position: relative;
+  z-index: 1;
+  padding: 40px 20px;
+  max-width: 1200px;
+}
+
+.card {
+  position: relative;
+  width: 350px;
+  height: 550px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  backdrop-filter: blur(15px);
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+  transition: all 0.5s ease;
+}
+
+.card:hover {
+  transform: translateY(-15px);
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
+}
+
+.card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.05);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.card-content {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  color: white;
+  height: 100%;
+}
+
+.card-image {
+  position: relative;
+  width: 100%;
+  height: 200px;
+  border-radius: 12px;
+  overflow: hidden;
+  margin-bottom: 5px;
+}
+
+.card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.card:hover .card-image img {
+  transform: scale(1.1);
+}
+
+.card-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  background: linear-gradient(90deg, #fff, #a3a3a3);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-align: center;
+}
+
+.card-text {
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.8);
+  line-height: 1.5;
+  text-align: center;
+}
+
+.card-stats {
+  display: flex;
+  justify-content: space-between;
+  margin-top: auto;
+  padding: 15px 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.value {
+  font-size: 1.5rem;
+  font-weight: 600;
+  background: linear-gradient(90deg, #64ffda, #00bcd4);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.type {
+  font-size: 0.7rem;
+  color: rgba(255, 255, 255, 0.6);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.card-button {
+  padding: 10px 30px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 30px;
+  color: white;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 10px;
+  align-self: center;
+  backdrop-filter: blur(10px);
+}
+
+.card-button:hover {
+  background: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  transform: translateY(-3px);
+}
+
+.background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.shape {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  animation: floatAnimation 8s infinite alternate ease-in-out;
+}
+
+.shape1 {
+  width: 500px;
+  height: 500px;
+  background: linear-gradient(45deg, #ff3998, #ff5f99);
+  top: -100px;
+  right: -100px;
+  animation-delay: 0s;
+}
+
+.shape2 {
+  width: 400px;
+  height: 400px;
+  background: linear-gradient(45deg, #0061ff, #60efff);
+  bottom: -100px;
+  left: -100px;
+  animation-delay: 2s;
+}
+
+.shape3 {
+  width: 300px;
+  height: 300px;
+  background: linear-gradient(45deg, #7700ff, #4400ff);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation-delay: 4s;
+}
+
+@keyframes floatAnimation {
+  0% {
+    transform: translateY(0) translateX(0) scale(1);
+  }
+  100% {
+    transform: translateY(-40px) translateX(20px) scale(1.1);
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 20px;
+  }
+
+  .card {
+    width: 320px;
+    height: 520px;
+  }
+}
+
+
+-----JavaScript-----
+
+document.addEventListener("DOMContentLoaded", () => {
+  // Get all cards
+  const cards = document.querySelectorAll(".card");
+
+  // Add mousemove effect for each card
+  cards.forEach((card) => {
+    card.addEventListener("mousemove", (e) => {
+      // Get position of mouse relative to card
+      const rect = card.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+
+      // Calculate rotation values based on mouse position
+      const multiplier = 10; // Adjust for rotation intensity
+      const rotateY = (x / rect.width - 0.5) * multiplier;
+      const rotateX = (y / rect.height - 0.5) * -multiplier;
+
+      // Apply the rotation and 3D effect
+      card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-15px)`;
+
+      // Add subtle shadow based on rotation
+      updateCardShadow(card, rotateX, rotateY);
+
+      // Add highlight effect based on mouse position
+      updateHighlight(card, x, y);
+    });
+
+    // Reset card on mouse leave
+    card.addEventListener("mouseleave", () => {
+      card.style.transform = "translateY(-15px)";
+      card.style.boxShadow = "0 25px 50px rgba(0, 0, 0, 0.3)";
+
+      // Remove highlight
+      const highlight = card.querySelector(".card-highlight");
+      if (highlight) {
+        highlight.remove();
+      }
+    });
+
+    // Add click effect
+    card.addEventListener("click", () => {
+      card.classList.add("card-click");
+      setTimeout(() => {
+        card.classList.remove("card-click");
+      }, 300);
+    });
+  });
+
+  // Function to update card shadow based on rotation
+  function updateCardShadow(card, rotateX, rotateY) {
+    const shadowX = rotateY * 2;
+    const shadowY = rotateX * 2;
+    card.style.boxShadow = `${shadowX}px ${shadowY}px 30px rgba(0, 0, 0, 0.4), 
+                               0 25px 50px rgba(0, 0, 0, 0.3)`;
+  }
+
+  // Function to add highlight effect based on mouse position
+  function updateHighlight(card, x, y) {
+    // Remove existing highlight
+    const existingHighlight = card.querySelector(".card-highlight");
+    if (existingHighlight) {
+      existingHighlight.remove();
+    }
+
+    // Create highlight element
+    const highlight = document.createElement("div");
+    highlight.classList.add("card-highlight");
+
+    // Set highlight styles
+    highlight.style.position = "absolute";
+    highlight.style.width = "150px";
+    highlight.style.height = "150px";
+    highlight.style.borderRadius = "50%";
+    highlight.style.background =
+      "radial-gradient(circle, rgba(255,255,255,0.15) 0%, rgba(255,255,255,0) 70%)";
+    highlight.style.pointerEvents = "none";
+    highlight.style.transform = "translate(-50%, -50%)";
+    highlight.style.top = `${y}px`;
+    highlight.style.left = `${x}px`;
+    highlight.style.opacity = "0.8";
+
+    // Add highlight to card
+    card.appendChild(highlight);
+  }
+
+  // Animate the background shapes
+  animateBackgroundShapes();
+});
+
+// Function to animate background shapes
+function animateBackgroundShapes() {
+  const shapes = document.querySelectorAll(".shape");
+
+  // Add additional random movements to shapes
+  shapes.forEach((shape, index) => {
+    // Get current position
+    const computedStyle = window.getComputedStyle(shape);
+    let currentTop = parseInt(computedStyle.top);
+    let currentLeft = parseInt(computedStyle.left);
+
+    // If values are NaN (for centered shape), set defaults
+    if (isNaN(currentTop)) currentTop = window.innerHeight / 2;
+    if (isNaN(currentLeft)) currentLeft = window.innerWidth / 2;
+
+    // Set random movement
+    setInterval(() => {
+      // Generate random movement values
+      const moveX = (Math.random() - 0.5) * 20;
+      const moveY = (Math.random() - 0.5) * 20;
+
+      // Apply movement with transition
+      shape.style.transition = "transform 8s ease-in-out";
+      shape.style.transform = `translate(${moveX}px, ${moveY}px) scale(${
+        1 + Math.random() * 0.2
+      })`;
+    }, 8000);
+  });
+}
+
+// Card button effects
+document.addEventListener("DOMContentLoaded", () => {
+  const buttons = document.querySelectorAll(".card-button");
+
+  buttons.forEach((button) => {
+    button.addEventListener("mouseover", () => {
+      button.style.transform = "translateY(-5px)";
+    });
+
+    button.addEventListener("mouseout", () => {
+      button.style.transform = "translateY(0)";
+    });
+
+    button.addEventListener("click", (e) => {
+      // Create ripple effect
+      const ripple = document.createElement("span");
+      ripple.classList.add("ripple");
+      button.appendChild(ripple);
+
+      const rect = button.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+
+      ripple.style.left = `${x}px`;
+      ripple.style.top = `${y}px`;
+
+      setTimeout(() => {
+        ripple.remove();
+      }, 600);
+
+      // Alert for demo purposes
+      alert("Button clicked: " + button.textContent);
+    });
+  });
+});

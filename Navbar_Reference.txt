@@ -1,0 +1,474 @@
+-----HTML-----
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Liquid Glass Interface - Subtle</title>
+    <style>
+
+    </style>
+</head>
+<body>
+
+    <div class="navbar-container" id="physicsNavContainer">
+        <glass-element 
+            id="mainNav" 
+            height="56" 
+            radius="30"
+            depth="8" 
+            blur="1.2" 
+            strength="10" 
+            zoom="1.02"
+            background-color="rgba(255, 255, 255, 0.70)" 
+            chromatic-aberration="10"
+            specular-intensity="0.25">
+            
+            <div class="nav-content">
+                <a href="#" class="nav-logo">Liquid Glass</a>
+                <ul class="nav-links">
+                    <li><a href="#vision">Visión</a></li>
+                    <li><a href="#fluidity">Fluidez</a></li>
+                    <li><a href="#technology">Tecnología</a></li>
+                    <li><a href="#contact">Contacto</a></li>
+                </ul>
+            </div>
+        </glass-element>
+    </div>
+
+    <main>
+        <section class="hero">
+            <h1>Fluidez Orgánica.</h1>
+            <p>Una interfaz que respira. Scroll suave, físicas sutiles y una sensación premium en cada interacción.</p>
+        </section>
+
+        <section id="vision" class="feature-section">
+            <div class="feature-container">
+                <h2>Diseño que se siente.</h2>
+                <div class="large-image"></div>
+                <div class="grid-3">
+                    <div class="grid-item">
+                        <h3>Viscosidad</h3>
+                        <p>El movimiento de la barra de navegación simula un líquido denso, absorbiendo la inercia del usuario sin movimientos bruscos.</p>
+                    </div>
+                    <div class="grid-item">
+                        <h3>Refracción Real</h3>
+                        <p>El fondo se curva suavemente detrás del cristal gracias a mapas de desplazamiento SVG dinámicos.</p>
+                    </div>
+                    <div class="grid-item">
+                        <h3>Estabilidad</h3>
+                        <p>A diferencia de otras animaciones web, esta prioriza la funcionalidad: el contenido siempre es legible y accesible.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="fluidity">
+            <h2>Detalles invisibles.</h2>
+            <p style="max-width: 700px; margin-top: 20px;">
+                La perfección no es cuando no hay nada más que añadir, sino cuando no hay nada más que quitar. Hemos eliminado la fricción visual para dejar solo la esencia del movimiento.
+            </p>
+        </section>
+        
+        <div style="height: 50vh;"></div>
+    </main>
+
+    <footer>
+        <p>By Gonzalo Chiaradia © 2025</p>
+    </footer>
+  
+  </body>
+</html>
+
+
+
+
+
+-----CSS-----
+
+        /* --- Estética General (Apple Style) --- */
+        :root {
+            --text-primary: #1d1d1f;
+            --text-secondary: #86868b;
+            --bg-light: #ffffff;
+            --bg-off-white: #f5f5f7;
+            --accent-blue: #2997ff;
+            --section-spacing: 120px;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg-light);
+            color: var(--text-primary);
+            overflow-x: hidden;
+        }
+
+        h1 { font-size: 56px; line-height: 1.07; font-weight: 700; letter-spacing: -0.005em; }
+        h2 { font-size: 48px; line-height: 1.08; font-weight: 600; letter-spacing: -0.003em; }
+        h3 { font-size: 24px; font-weight: 600; margin-bottom: 10px; }
+        p { font-size: 21px; line-height: 1.4; color: var(--text-secondary); font-weight: 400; }
+
+        /* --- Navbar Container --- */
+        .navbar-container {
+            position: fixed;
+            top: 24px;
+            left: 50%;
+            /* El transform será controlado por JS, pero partimos del centro */
+            transform: translateX(-50%) translate3d(0,0,0); 
+            z-index: 1000;
+            width: 90%;
+            max-width: 980px;
+            pointer-events: none; /* Permite scroll a través de los huecos */
+            will-change: transform; /* Optimización de rendimiento */
+        }
+
+        /* El componente de vidrio */
+        glass-element#mainNav {
+            pointer-events: auto; /* Reactivar clicks */
+            display: block;
+            width: 100%;
+        }
+
+        /* Contenido del Navbar */
+        .nav-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            height: 100%;
+            padding: 0 32px;
+            box-sizing: border-box;
+        }
+
+        .nav-logo {
+            font-size: 21px;
+            font-weight: 600;
+            color: var(--text-primary);
+            text-decoration: none;
+            letter-spacing: -0.01em;
+            opacity: 0.9;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-primary);
+            font-size: 12px;
+            font-weight: 400;
+            opacity: 0.8;
+            transition: color 0.2s ease, opacity 0.2s ease;
+        }
+
+        .nav-links a:hover {
+            opacity: 1;
+            color: var(--accent-blue);
+        }
+
+        /* --- Landing Page Content --- */
+        section {
+            padding: var(--section-spacing) 24px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            max-width: 980px;
+            margin: 0 auto;
+        }
+
+        .hero {
+        width: 100vw;
+        max-width: 100%;
+        margin-left: calc(50% - 50vw);
+        margin-right: calc(50% - 50vw);
+        padding-left: 0;
+        padding-right: 0;
+
+        background-image: url('https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=2564&auto=format&fit=crop');
+        background-size: cover;
+        background-position: center;
+        padding-top: 200px;
+        padding-bottom: 180px;
+        }
+
+        .hero h1 { color: white; text-shadow: 0 10px 30px rgba(0,0,0,0.3); max-width: 800px; margin-bottom: 20px; }
+        .hero p { color: rgba(255,255,255,0.95); max-width: 600px; font-weight: normal; }
+
+        .feature-section { background-color: var(--bg-off-white); width: 100%; max-width: 100%; }
+        .feature-container { max-width: 980px; margin: 0 auto; }
+        .feature-section h2 { margin-bottom: 60px; color: #1d1d1f; }
+
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 60px;
+            width: 100%;
+            text-align: left;
+        }
+        
+        .grid-item p { font-size: 17px; margin-top: 10px; }
+
+        .large-image {
+            width: 100%;
+            max-width: 980px;
+            height: 500px;
+            background: url('https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=2670&auto=format&fit=crop') center/cover;
+            border-radius: 28px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+            margin: 80px 0;
+        }
+
+        footer {
+            background: var(--bg-off-white);
+            padding: 60px 20px;
+            text-align: center;
+            font-size: 12px;
+            color: var(--text-secondary);
+            border-top: 1px solid rgba(0,0,0,0.1);
+        }
+
+        /* Mobile */
+        @media (max-width: 768px) {
+            h1 { font-size: 42px; }
+            h2 { font-size: 34px; }
+            .nav-links { display: none; }
+            .navbar-container { width: 92%; top: 16px; }
+        }
+
+
+
+
+-----JavaScript-----
+
+        // --- 1. UTILIDADES SVG (No tocar, lógica base) ---
+        function getDisplacementMap({ height, width, radius, depth }) {
+            const svg = `<svg height="${height}" width="${width}" viewBox="0 0 ${width} ${height}" xmlns="http://www.w3.org/2000/svg">
+            <style>.mix { mix-blend-mode: screen; }</style>
+            <defs>
+            <linearGradient id="Y" x1="0" x2="0" y1="${Math.ceil((radius / height) * 20)}%" y2="${Math.floor(100 - (radius / height) * 20)}%">
+            <stop offset="0%" stop-color="#00FF00" /><stop offset="50%" stop-color="#404040" /><stop offset="100%" stop-color="#000000" />
+            </linearGradient>
+            <linearGradient id="X" x1="${Math.ceil((radius / width) * 20)}%" x2="${Math.floor(100 - (radius / width) * 20)}%" y1="0" y2="0">
+            <stop offset="0%" stop-color="#FF0000" /><stop offset="50%" stop-color="#404040" /><stop offset="100%" stop-color="#000000" />
+            </linearGradient>
+            <filter id="softBlur"><feGaussianBlur stdDeviation="3" /></filter>
+            </defs>
+            <rect x="0" y="0" height="${height}" width="${width}" fill="#808080" />
+            <rect x="0" y="0" height="${height}" width="${width}" fill="#001040" />
+            <rect x="0" y="0" height="${height}" width="${width}" fill="url(#Y)" class="mix" />
+            <rect x="0" y="0" height="${height}" width="${width}" fill="url(#X)" class="mix" />
+            <rect x="${depth}" y="${depth}" height="${height - 2 * depth}" width="${width - 2 * depth}" fill="#808080" rx="${radius}" ry="${radius}" filter="url(#softBlur)" />
+            </svg>`;
+            return "data:image/svg+xml;utf8," + encodeURIComponent(svg);
+        }
+
+        function getSpecularHighlight({ height, width, radius, intensity = 0.5 }) {
+            const svg = `<svg height="${height}" width="${width}" viewBox="0 0 ${width} ${height}" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+            <radialGradient id="rimLight" cx="50%" cy="20%">
+            <stop offset="0%" stop-color="rgba(255, 255, 255, ${intensity * 1.2})" />
+            <stop offset="40%" stop-color="rgba(255, 255, 255, ${intensity * 0.5})" />
+            <stop offset="80%" stop-color="rgba(255, 255, 255, ${intensity * 0.1})" />
+            <stop offset="100%" stop-color="rgba(255, 255, 255, 0)" />
+            </radialGradient>
+            <filter id="softGlow"><feGaussianBlur stdDeviation="4" /></filter>
+            </defs>
+            <ellipse cx="${width/2}" cy="${height * 0.25}" rx="${width * 0.6}" ry="${height * 0.35}" fill="url(#rimLight)" filter="url(#softGlow)" />
+            </svg>`;
+            return "data:image/svg+xml;utf8," + encodeURIComponent(svg);
+        }
+
+        function getDisplacementFilter({ height, width, radius, depth, strength = 100, chromaticAberration = 0, specularIntensity = 0.5 }) {
+            const displacementMapUrl = getDisplacementMap({ height, width, radius, depth });
+            const specularUrl = getSpecularHighlight({ height, width, radius, intensity: specularIntensity });
+            const svg = `<svg height="${height}" width="${width}" viewBox="0 0 ${width} ${height}" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+            <filter id="displace" color-interpolation-filters="sRGB">
+            <feImage x="0" y="0" height="${height}" width="${width}" href="${displacementMapUrl}" result="displacementMap" />
+            <feGaussianBlur in="SourceGraphic" stdDeviation="0.5" result="blurredSource"/>
+            <feDisplacementMap in="blurredSource" in2="displacementMap" scale="${strength * 1.8 + chromaticAberration * 2}" xChannelSelector="R" yChannelSelector="G" result="displaced"/>
+            <feDisplacementMap in="displaced" in2="displacementMap" scale="${strength + chromaticAberration * 1.5}" xChannelSelector="R" yChannelSelector="G" />
+            <feColorMatrix type="matrix" values="1.05 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0" result="displacedR" />
+            <feDisplacementMap in="displaced" in2="displacementMap" scale="${strength * 1.2 + chromaticAberration * 0.8}" xChannelSelector="R" yChannelSelector="G" />
+            <feColorMatrix type="matrix" values="0 0 0 0 0 0 1.05 0 0 0 0 0 0 0 0 0 0 0 1 0" result="displacedG" />
+            <feDisplacementMap in="displaced" in2="displacementMap" scale="${strength * 0.9}" xChannelSelector="R" yChannelSelector="G" />
+            <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 1.05 0 0 0 0 0 1 0" result="displacedB" />
+            <feBlend in="displacedR" in2="displacedG" mode="screen"/>
+            <feBlend in2="displacedB" mode="screen" result="refracted"/>
+            <feImage x="0" y="0" height="${height}" width="${width}" href="${specularUrl}" result="specular" />
+            <feBlend in="refracted" in2="specular" mode="screen" result="final"/>
+            <feComponentTransfer in="final"><feFuncA type="linear" slope="1.1"/></feComponentTransfer>
+            </filter>
+            </defs>
+            </svg>`;
+            return "data:image/svg+xml;utf8," + encodeURIComponent(svg) + "#displace";
+        }
+
+        window.DisplacementUtils = { getDisplacementMap, getDisplacementFilter, getSpecularHighlight };
+
+        // --- 2. COMPONENTE WEB ---
+        class GlassElement extends HTMLElement {
+            constructor() {
+                super();
+                this.attachShadow({ mode: 'open' });
+                if (GlassElement._svgFilterSupport === undefined) {
+                    GlassElement._svgFilterSupport = CSS.supports('backdrop-filter', 'blur(1px)') || CSS.supports('-webkit-backdrop-filter', 'blur(1px)');
+                }
+                this._resizeObserver = new ResizeObserver(this.handleResize.bind(this));
+            }
+            get hasSVGFilterSupport() { return GlassElement._svgFilterSupport; }
+            static get observedAttributes() { return ['width', 'height', 'radius', 'depth', 'blur', 'strength', 'chromatic-aberration', 'background-color', 'specular-intensity', 'zoom']; }
+            connectedCallback() { this.render(); this._resizeObserver.observe(this.parentElement); }
+            disconnectedCallback() { this._resizeObserver.disconnect(); }
+            handleResize() { this.updateStyles(); }
+            attributeChangedCallback() { if (this.shadowRoot && this.shadowRoot.querySelector('.glass-box')) { this.updateStyles(); } }
+            get width() { const attr = this.getAttribute('width'); return attr ? (attr.includes('%') ? this.offsetWidth : parseInt(attr)) : this.offsetWidth || 200; }
+            get height() { const attr = this.getAttribute('height'); return attr ? parseInt(attr) : this.offsetHeight || 80; }
+            get radius() { return parseInt(this.getAttribute('radius')) || 20; }
+            get depth() { return parseInt(this.getAttribute('depth')) || 10; }
+            get blur() { return parseFloat(this.getAttribute('blur')) || 2; }
+            get strength() { return parseInt(this.getAttribute('strength')) || 100; }
+            get chromaticAberration() { return parseInt(this.getAttribute('chromatic-aberration')) || 0; }
+            get backgroundColor() { return this.getAttribute('background-color') || 'rgba(255, 255, 255, 0.4)'; }
+            get specularIntensity() { return parseFloat(this.getAttribute('specular-intensity')) || 0.5; }
+            get zoom() { return parseFloat(this.getAttribute('zoom')) || 1.2; }
+
+            updateStyles() {
+                const glassBox = this.shadowRoot.querySelector('.glass-box');
+                if (!glassBox || this.width === 0 || this.height === 0) return;
+
+                const { getDisplacementFilter } = window.DisplacementUtils;
+                glassBox.style.borderRadius = `${this.radius}px`;
+                glassBox.style.height = this.getAttribute('height') ? `${this.height}px` : '100%';
+                glassBox.style.width = '100%'; 
+                this.style.height = `${this.height}px`;
+
+                if (!this.hasSVGFilterSupport) {
+                    glassBox.style.backdropFilter = `blur(${this.blur * 4}px)`;
+                    glassBox.style.webkitBackdropFilter = `blur(${this.blur * 4}px)`;
+                    glassBox.style.background = this.backgroundColor;
+                    glassBox.style.border = '1px solid rgba(255, 255, 255, 0.3)';
+                } else {
+                    const filterUrl = getDisplacementFilter({
+                        height: this.height, width: this.width, radius: this.radius, depth: this.depth,
+                        strength: this.strength, chromaticAberration: this.chromaticAberration, specularIntensity: this.specularIntensity
+                    });
+                    const backdropFilterCSS = `blur(${this.blur}px) url('${filterUrl}') brightness(${1.01 + this.zoom * 0.01}) saturate(${1.05 + this.zoom * 0.05})`;
+                    glassBox.style.backdropFilter = backdropFilterCSS;
+                    glassBox.style.webkitBackdropFilter = backdropFilterCSS;
+                    glassBox.style.background = `linear-gradient(180deg, ${this.backgroundColor}, rgba(255, 255, 255, 0.2))`;
+                    glassBox.style.boxShadow = `
+                        inset 0 1px 1px rgba(255, 255, 255, 0.9),
+                        0 4px 24px rgba(0, 0, 0, 0.08),
+                        0 0 0 0.5px rgba(255, 255, 255, 0.3)
+                    `;
+                    glassBox.style.backgroundSize = `${100 * this.zoom}%`;
+                }
+            }
+
+            render() {
+                this.shadowRoot.innerHTML = `
+                <style>
+                :host { display: block; }
+                .glass-box {
+                    position: relative; height: 100%; width: 100%;
+                    transition: background 0.3s ease, box-shadow 0.3s ease;
+                    overflow: hidden;
+                }
+                .content { height: 100%; width: 100%; position: relative; z-index: 2; }
+                </style>
+                <div class="glass-box"><div class="content"><slot></slot></div></div>
+                `;
+                requestAnimationFrame(() => this.updateStyles());
+            }
+        }
+        customElements.define('glass-element', GlassElement);
+
+        // --- 3. NUEVO MOTOR DE FÍSICAS "HEAVY GEL" ---
+        const navContainer = document.getElementById('physicsNavContainer');
+        let lastScrollY = window.scrollY;
+        let animationId = null;
+
+        // Variables de estado
+        let wobbleY = 0;
+        let wobbleVelY = 0;
+
+        // CONFIGURACIÓN SUAVE (Ajustada para que no sea brusca)
+        const physicsConfig = {
+            spring: 0.15,      // Retorno al centro un poco más rápido (menos oscilación)
+            damping: 0.92,     // MUCHA fricción. Simula aceite espeso, no goma. (Valor cercano a 1)
+            mass: 2.0,         // Sensación de peso.
+            inputFactor: 0.015, // Reduce drásticamente cuánto afecta el scroll al movimiento (Muy sutil)
+            limitY: 12,        // Límite máximo de píxeles que se puede mover (Clamp)
+            maxScale: 0.02     // Máximo estiramiento (2%)
+        };
+
+        function setTranslate(el, yPos, scaleY) {
+            // Mantenemos solo traducción Y y una escala muy sutil. SIN ROTACIÓN.
+            el.style.transform = `translateX(-50%) translate3d(0, ${yPos.toFixed(2)}px, 0) scaleY(${scaleY.toFixed(4)})`;
+        }
+
+        function animateNavbarWobble() {
+            // 1. Fuerza de resorte (queremos volver a 0)
+            const forceY = -wobbleY * physicsConfig.spring;
+
+            // 2. Física básica: Fuerza / Masa = Aceleración
+            wobbleVelY += forceY / physicsConfig.mass;
+
+            // 3. Fricción (Damping)
+            wobbleVelY *= physicsConfig.damping;
+
+            // 4. Actualizar posición
+            wobbleY += wobbleVelY;
+
+            // 5. Estiramiento (Breathing effect) - Muy sutil basado en velocidad
+            // Solo se estira un poco, no se aplasta.
+            const deformation = Math.min(Math.abs(wobbleVelY) * 0.05, physicsConfig.maxScale);
+            const scaleY = 1 + deformation;
+
+            // 6. Aplicar al DOM
+            setTranslate(navContainer, wobbleY, scaleY);
+
+            // 7. Loop: detener si la energía es casi nula
+            if (Math.abs(wobbleVelY) > 0.005 || Math.abs(wobbleY) > 0.005) {
+                animationId = requestAnimationFrame(animateNavbarWobble);
+            } else {
+                // Reset limpio
+                wobbleY = 0;
+                wobbleVelY = 0;
+                setTranslate(navContainer, 0, 1);
+                animationId = null;
+            }
+        }
+
+        window.addEventListener('scroll', () => {
+            const currentScrollY = window.scrollY;
+            const scrollVelocity = currentScrollY - lastScrollY;
+            lastScrollY = currentScrollY;
+
+            // Clampear la velocidad de entrada: Si el usuario hace scroll ultrarrápido,
+            // limitamos el impacto para que la navbar no salte.
+            const clampedInput = Math.max(-80, Math.min(80, scrollVelocity));
+
+            // Inyectar velocidad invertida (efecto arrastre)
+            wobbleVelY -= clampedInput * physicsConfig.inputFactor;
+
+            // Asegurar que el desplazamiento nunca supere el límite físico (Clamp de posición)
+            // Esto evita que la navbar se vaya muy lejos.
+            // Nota: Aplicamos una fuerza contraria fuerte si nos pasamos del límite
+            if (wobbleY > physicsConfig.limitY) wobbleY = physicsConfig.limitY;
+            if (wobbleY < -physicsConfig.limitY) wobbleY = -physicsConfig.limitY;
+
+            if (!animationId) {
+                animateNavbarWobble();
+            }
+        }, { passive: true });

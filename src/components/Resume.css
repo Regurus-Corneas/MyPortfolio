@@ -1,0 +1,186 @@
+/* Magic Card Styles - Opposite of provided code (glow on hover) */
+
+@property --rotate {
+  syntax: "<angle>";
+  initial-value: 132deg;
+  inherits: false;
+}
+
+.magic-card {
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: none;
+  padding: 14px;
+  position: relative;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: color 1s;
+  color: rgb(88 199 250 / 0%);
+}
+
+.magic-card:hover {
+  color: rgb(88 199 250 / 100%);
+}
+
+.magic-card::before {
+  content: "";
+  width: 104%;
+  height: 102%;
+  border-radius: 8px;
+  background-image: linear-gradient(
+    var(--rotate)
+    , #5ddcff, #3c67e3 43%, #4e00c2);
+  position: absolute;
+  z-index: -1;
+  top: -1%;
+  left: -2%;
+  opacity: 0;
+  transition: opacity 0.5s;
+}
+
+.magic-card::after {
+  position: absolute;
+  content: "";
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: -1;
+  height: 100%;
+  width: 100%;
+  margin: 0 auto;
+  transform: scale(0.8);
+  filter: blur(12px);
+  background-image: linear-gradient(
+    var(--rotate)
+    , #5ddcff, #3c67e3 43%, #4e00c2);
+  opacity: 0;
+  transition: opacity 0.5s;
+}
+
+.magic-card:hover::before,
+.magic-card:hover::after {
+  opacity: 1;
+  animation: spin 2.5s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    --rotate: 0deg;
+  }
+  100% {
+    --rotate: 360deg;
+  }
+}
+
+/* Download CV Button - Cyan glow variant of Hero's glass-glow-btn */
+.glass-glow-btn-cv {
+  height: 50px;
+  position: relative;
+  width: 190px;
+}
+
+.glass-glow-btn-cv a {
+  align-items: center;
+  background: rgba(255, 255, 255, 0.05);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 30px;
+  box-shadow: 0 15px 35px rgba(255, 255, 255, 0.2);
+  color: #fff;
+  display: flex;
+  font-size: 16px;
+  font-weight: 700;
+  left: 0;
+  top: 0;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  justify-content: center;
+  letter-spacing: 1px;
+  text-decoration: none;
+  overflow: hidden;
+  -webkit-backdrop-filter: blur(15px);
+  backdrop-filter: blur(15px);
+  z-index: 1;
+  transition: 0.5s;
+}
+
+.glass-glow-btn-cv:hover a {
+  letter-spacing: 2px;
+}
+
+.glass-glow-btn-cv a::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(to left,
+              rgba(255,255,255,0.15),
+              transparent);
+  transform: skewX(45deg) translateX(0);
+  transition: 0.5s;
+}
+
+.glass-glow-btn-cv:hover a::before {
+  transform: skewX(45deg) translateX(200%);
+}
+
+.glass-glow-btn-cv::before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: -5px;
+  height: 10px;
+  width: 30px;
+  background: #00d4ff;
+  border-radius: 10px;
+  transition: 0.5s;
+  transition-delay: 0s;
+  box-shadow: 0 0 5px #00d4ff,
+    0 0 15px #00d4ff,
+    0 0 30px #00d4ff,
+    0 0 60px #00d4ff;
+}
+
+.glass-glow-btn-cv:hover::before {
+  bottom: 0;
+  height: 50%;
+  width: 80%;
+  border-radius: 30px;
+  transition-delay: 0.5s;
+}
+
+.glass-glow-btn-cv::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: -5px;
+  height: 10px;
+  width: 30px;
+  background: #00d4ff;
+  border-radius: 10px;
+  transition: 0.5s;
+  transition-delay: 0s;
+  box-shadow: 0 0 5px #00d4ff,
+    0 0 15px #00d4ff,
+    0 0 30px #00d4ff,
+    0 0 60px #00d4ff;
+}
+
+.glass-glow-btn-cv:hover::after {
+  top: 0;
+  height: 50%;
+  width: 80%;
+  border-radius: 30px;
+  transition-delay: 0.5s;
+}
+
+.glass-glow-btn-cv:active a {
+  color: #000;
+}
