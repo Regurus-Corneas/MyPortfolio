@@ -15,9 +15,11 @@ function Projects() {
       image: '/images/shopsegment-preview.png'
     },
     {
-      title: 'Project Name 3',
-      description: 'Brief description of the project, technologies used, and key features implemented.',
-      tech: ['Vue.js', 'Express', 'MySQL']
+      title: 'LUCID CV',
+      description: 'AI-powered resume matcher and optimizer tailored for specific job descriptions.',
+      tech: ['Next.js', 'Clerk Authentication', 'Groq AI API'],
+      link: 'https://my-portfolio-six-mauve-20.vercel.app',
+      image: '/images/lucid-cv-preview.png'
     }
   ]
 
@@ -59,7 +61,7 @@ function Projects() {
                   <img
                     src={project.image}
                     alt={project.title}
-                    className="w-full h-52 object-contain"
+                    className="w-full h-52 object-cover"
                     loading="lazy"
                   />
                 </div>
